@@ -5,7 +5,26 @@
   $captcha_num = substr(str_shuffle($captcha_num), 0, 6);
   $resData = file_get_contents('php://input');
   $jsonData = json_decode($resData);
+  //declare new properties for obj to be send back to angular $http service
   $jsonData->RefNum = $captcha_num;
   $jsonData->ReqType = 'Death';
+  //extract props from obj
+  $ReqName = $jsonData->ReqName;
+  $ReqMid = $jsonData->ReqMid;
+  $ReqLast = $jsonData->ReqLast;
+  $dName = $jsonData->rDName;
+  $dMid = $jsonData->rDMid;
+  $dLast = $jsonData->rDLast;
+  $dDate = $jsonData->dDate;
+
+  $conn = mysqli_connect('localhost','CIO_DB','m2losdq4','cio_spc');
+  $sql = "INSERT INTO lcr_reqr(ReqName,ReqMid,ReqLast,id)VALUES('$ReqName','$ReqMid','$ReqLast','$captcha_num');";
+  $sql .= "INSERT INTO lcr_death(id,bName,bMid,bLast,bDate)VALUES('$captcha_num','$dName','$dMid','$dLast','$dDate');";
+  if(mysqli_multi_query($conn,$sql)){
+    $jsonData->message = 'Data Sent';
+  } else{
+    $jsonData->message = 'An error occured while sending data';
+  }
+  mysqli_close($conn);
   echo(json_encode($jsonData));
 ?>

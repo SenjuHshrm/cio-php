@@ -213,15 +213,29 @@ app
       })
       .success(function(data){
         console.log(data);
-        $scope.ReqName = data.ReqName;
-        $scope.ReqMid = data.ReqMid;
-        $scope.ReqLast = data.ReqLast;
-        $scope.rMName = data.rMName;
-        $scope.rMMid = data.rMMid;
-        $scope.rMLast = data.rMLast;
-        $scope.mDate = data.mDate;
-        $scope.ReqType = data.ReqType;
-        $scope.RefNum = data.RefNum;
+        if(data.message == 'Data Sent'){
+          $scope.message = data.message;
+          $scope.ReqName = data.ReqName;
+          $scope.ReqMid = data.ReqMid;
+          $scope.ReqLast = data.ReqLast;
+          $scope.rMName = data.rMName;
+          $scope.rMMid = data.rMMid;
+          $scope.rMLast = data.rMLast;
+          $scope.mDate = data.mDate;
+          $scope.ReqType = data.ReqType;
+          $scope.RefNum = data.RefNum;
+        } else{
+          $scope.message = data.message;
+          $scope.ReqName = '';
+          $scope.ReqMid = '';
+          $scope.ReqLast = '';
+          $scope.rMName = '';
+          $scope.rMMid = '';
+          $scope.rMLast = '';
+          $scope.mDate = '';
+          $scope.ReqType = '';
+          $scope.RefNum = '';
+        }
       })
     }
     //death
@@ -241,15 +255,29 @@ app
       })
       .success(function(data){
         console.log(data);
-        $scope.ReqName = data.ReqName;
-        $scope.ReqMid = data.ReqMid;
-        $scope.ReqLast = data.ReqLast;
-        $scope.rDName = data.rDName;
-        $scope.rDMid = data.rDMid;
-        $scope.rDLast = data.rDLast;
-        $scope.dDate = data.dDate;
-        $scope.ReqType = data.ReqType;
-        $scope.RefNum = data.RefNum;
+        if(data.message == 'Data Sent'){
+          $scope.message = data.message;
+          $scope.ReqName = data.ReqName;
+          $scope.ReqMid = data.ReqMid;
+          $scope.ReqLast = data.ReqLast;
+          $scope.rDName = data.rDName;
+          $scope.rDMid = data.rDMid;
+          $scope.rDLast = data.rDLast;
+          $scope.dDate = data.dDate;
+          $scope.ReqType = data.ReqType;
+          $scope.RefNum = data.RefNum;
+        } else{
+          $scope.message = data.message;
+          $scope.ReqName = '';
+          $scope.ReqMid = '';
+          $scope.ReqLast = '';
+          $scope.rDName = '';
+          $scope.rDMid = '';
+          $scope.rDLast = '';
+          $scope.dDate = '';
+          $scope.ReqType = '';
+          $scope.RefNum = '';
+        }
       })
     }
   })

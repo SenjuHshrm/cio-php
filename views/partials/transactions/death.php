@@ -54,7 +54,7 @@
           <div class='modal-dialog'>
             <div class='modal-content'>
               <div class='modal-header'>
-                <h4>Data Sent</h4>
+                <h4>{{message}}</h4>
               </div>
               <div class='modal-body'>
                 <p>Reference: {{RefNum}}</p>
