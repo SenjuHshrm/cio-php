@@ -1,0 +1,65 @@
+/***************************/
+/* User defined properties */
+/*           R.Ma          */
+/***************************/
+
+/*User defined properties for HTML Tags*/
+html{
+  min-height:100%;
+}
+h1, h2, h3, h4, h5, h6{
+  text-align:center;
+  margin-top:0px;
+  padding:20px;
+}
+/*body{
+  margin-top:70px;
+}*/
+hr{
+  border-top:1px solid #07248c;
+}
+footer{
+  bottom:0px;
+  left:0px;
+  right:0px;
+  height:30px;
+  margin-bottom:0px;
+  position:fixed;
+  background-color:#99d1ff;
+}
+/*User defined properties for classes*/
+.nav-ul-margin{
+  margin-top:30px;
+}
+.content-container{
+  background-color:#e6f4ff;
+  height:inherit;
+  border:1px solid black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom:40px;
+  border-radius:15px;
+}
+.content-header{
+  background-color:#99d1ff;
+  height:inherit;
+  margin-bottom:15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-top-right-radius:15px;
+  border-top-left-radius:15px;
+}
+/*Bootstrap classes overwrite*/
+.navbar-inverse{
+  background-color:#006ac1;
+  border-bottom:1px solid black;
+  height:70px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.navbar-collapse{
+  background-color:#006ac1;
+}
+.control-label{
+  text-align:center;
+}
+.navbar-nav>li>a.login{
+  padding-top:7px;
+}
