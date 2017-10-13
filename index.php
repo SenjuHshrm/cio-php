@@ -18,7 +18,7 @@
     </head>
     <body ng-cloak ng-controller='bodyCtrl'>
       <ng-include src="'/views/partials/header.php'"></ng-include>
-      <div style='margin-top:120px;'></div>
+      <div style='margin-top:100px;'></div>
       <div ng-view></div>
       <ng-include class='news' src="'/views/partials/news.php'"></ng-include>
     </body>

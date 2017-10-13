@@ -28,6 +28,12 @@ footer{
   background-color:#99d1ff;
 }
 /*User defined properties for classes*/
+.img-border{
+  border:3px double black;
+  width:275px;
+  height:275px;
+  margin:auto;
+}
 .nav-ul-margin{
   margin-top:30px;
 }

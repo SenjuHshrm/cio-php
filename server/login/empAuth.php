@@ -25,6 +25,7 @@
     $_SESSION['login'] = $fname[0]." ".substr($mname[0],0,1).". ".$lname[0];
     $_SESSION['pic'] = $pic[0];
     $_SESSION['userType'] = 'Employee';
+    $_SESSION['id'] = $id;
     $jsonData->message = 'success';
   }
   else if(($userVal[0]!=$adminUser)&&($passVal[0]==$adminPass)){

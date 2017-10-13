@@ -59,5 +59,27 @@ app
         template:' ',
         controller:'LogOut'
       })
+      //admin login control routes
+      .when('/admin-profile', {
+        templateUrl:'/views/users/admin/profile.php',
+        controller:'adminProf',
+        title:'Admin Profile'
+      })
+      .when('/settings', {
+        templateUrl:'/views/users/admin/settings.php',
+        controller:'settingCtrl',
+        title:'Web Settings'
+      })
+      //employee profile and walk in profile
+      .when('/emp-profile', {
+        templateUrl:'/views/users/employee/profile.php',
+        controller:'empProf',
+        title:'Employee Profile'
+      })
+      .when('/walkin-profile', {
+        templateUrl:'/views/users/walkin/profile.php',
+        controller:'wInProf',
+        title:'Walk In Profile'
+      })
     $locationProvider.html5Mode(true);
   })

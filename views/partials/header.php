@@ -40,20 +40,31 @@
           echo "<a class='dropdown-toggle login' data-toggle='dropdown' href='#'>";
           echo "<img src='".$_SESSION['pic']."' style='width:40px;height:40px;'>&nbsp;".$_SESSION['login']."&nbsp;<span class='fa fa-caret-down'></span></a>";
           echo "<ul class='dropdown-menu'>";
-          echo "<li><a href='#'><span class='fa fa-chevron-right'></span> Profile</a></li>";
+          echo "<li><a href='/admin-profile'><span class='fa fa-chevron-right'></span> Profile</a></li>";
           echo "<li class='divider'></li>";
-          echo "<li><a href='#'><span class='fa fa-chevron-right'></span> Web Settings</a></li>";
+          echo "<li><a href='/settings'><span class='fa fa-chevron-right'></span> Web Settings</a></li>";
           echo "<li class='divider'></li>";
           echo "<li><a href='/logout'><span class='fa fa-chevron-right'></span> Logout</a></li>";
           echo "</ul>";
           echo "</li>";
         }
-        else{
+        else if($_SESSION['userType'] == 'Employee'){
           echo "<li class='dropdown'>";
           echo "<a class='dropdown-toggle login' data-toggle='dropdown' href='#'>";
           echo "<img src='".$_SESSION['pic']."' style='width:40px;height:40px;'>&nbsp;".$_SESSION['login']."&nbsp;<span class='fa fa-caret-down'></span></a>";
           echo "<ul class='dropdown-menu'>";
-          echo "<li><a href='#'><span class='fa fa-chevron-right'></span> Profile</a></li>";
+          echo "<li><a href='/emp-profile'><span class='fa fa-chevron-right'></span> Profile</a></li>";
+          echo "<li class='divider'></li>";
+          echo "<li><a href='/logout'><span class='fa fa-chevron-right'></span> Logout</a></li>";
+          echo "</ul>";
+          echo "</li>";
+        }
+        else if($_SESSION['userType'] == 'Walk in'){
+          echo "<li class='dropdown'>";
+          echo "<a class='dropdown-toggle login' data-toggle='dropdown' href='#'>";
+          echo "<img src='".$_SESSION['pic']."' style='width:40px;height:40px;'>&nbsp;".$_SESSION['login']."&nbsp;<span class='fa fa-caret-down'></span></a>";
+          echo "<ul class='dropdown-menu'>";
+          echo "<li><a href='/walkin-profile'><span class='fa fa-chevron-right'></span> Profile</a></li>";
           echo "<li class='divider'></li>";
           echo "<li><a href='/logout'><span class='fa fa-chevron-right'></span> Logout</a></li>";
           echo "</ul>";

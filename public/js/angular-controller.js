@@ -76,6 +76,85 @@ app
       window.location.href='/'
     })
   })
+  //admin controller access
+  .controller('adminProf', function($scope, $http, $q){
+    $('.news').hide();
+    $http({
+      method:'GET',
+      url:'/server/info/adminProf.php',
+      cache:true
+    })
+    .success(function(data){
+      console.log(data);
+      var session = data.session;
+      if(session=='No session'){
+        window.location.href='/';
+      }
+      else{
+        $scope.fname = data.fname;
+        $scope.mname = data.mname;
+        $scope.lname = data.lname;
+        $scope.bday = data.bday;
+        $scope.age = data.age;
+        $scope.address = data.address;
+        $scope.contact = data.contact;
+        $scope.pic = data.pic;
+      }
+    })
+  })
+  .controller('settingCtrl', function($scope){
+    $('.news').hide();
+  })
+  .controller('empProf', function($scope, $http, $q){
+    $('.news').hide();
+    $http({
+      method:'GET',
+      url:'/server/info/empProf.php',
+      cache:true
+    })
+    .success(function(data){
+      console.log(data);
+      var session = data.session;
+      if(session=='No session'){
+        window.location.href='/';
+      }
+      else{
+        $scope.fname = data.fname;
+        $scope.mname = data.mname;
+        $scope.lname = data.lname;
+        $scope.bday = data.bday;
+        $scope.age = data.age;
+        $scope.address = data.address;
+        $scope.contact = data.contact;
+        $scope.pic = data.pic;
+      }
+    })
+  })
+  .controller('wInProf', function($scope, $http, $q){
+    $('.news').hide();
+    $http({
+      method:'GET',
+      url:'/server/info/wInProf.php',
+      cache:true
+    })
+    .success(function(data){
+      console.log(data);
+      var session = data.session;
+      if(session=='No session'){
+        window.location.href='/';
+      }
+      else{
+        $scope.fname = data.fname;
+        $scope.mname = data.mname;
+        $scope.lname = data.lname;
+        $scope.bday = data.bday;
+        $scope.age = data.age;
+        $scope.address = data.address;
+        $scope.contact = data.contact;
+        $scope.pic = data.pic;
+      }
+    })
+  })
   //signup controllers
   .controller('empSignUp', function($scope, $http){
     $scope.genders = [{
