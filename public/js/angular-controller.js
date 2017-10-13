@@ -23,10 +23,54 @@ app
       })
     };
   })
+  .controller('empLogCtrl', function($scope, $http){
+    $('.news').hide();
+    $scope.empData = {};
+    $scope.empLog = function(){
+      $http({
+        method:'POST',
+        url:'/server/login/empAuth.php',
+        data:$scope.empData,
+        headers:{
+          'Content-Type':'application/json'
+        }
+      })
+      .success(function(data){
+        var msg = data.message;
+        if(msg=='success'){
+          window.location.href='/';
+        } else{
+          $scope.errorMsg = msg;
+        }
+      })
+    }
+  })
+  .controller('walkCtrl', function($scope, $http){
+    $('.news').hide();
+    $scope.wInData = {};
+    $scope.wInLog = function(){
+      $http({
+        method:'POST',
+        url:'/server/login/wInAuth.php',
+        data:$scope.wInData,
+        headers:{
+          'Content-Type':'application/json'
+        }
+      })
+      .success(function(data){
+        var msg = data.message;
+        if(msg=='success'){
+          window.location.href='/';
+        } else{
+          $scope.errorMsg = msg;
+        }
+      })
+    }
+  })
   .controller('LogOut', function($http){
     $http({
       method:'POST',
-      url:'/server/login/adminOut.php'
+      url:'/server/login/LogOut.php'
     })
     .success(function(res){
       window.location.href='/'
@@ -82,7 +126,7 @@ app
       day = bdayobj.getDate(),
       mo = bdayobj.getMonth()+1,
       yr = bdayobj.getFullYear();
-      $scope.wInpData.birthday = [mo,day,yr].join('/');
+      $scope.wInData.birthday = [mo,day,yr].join('/');
       $scope.wInData.gender = $scope.genderList.value;
       console.log($scope.wInData);
       $http({
@@ -139,12 +183,6 @@ app
   })
   .controller('sbCtrl', function($scope){
 
-  })
-  .controller('empLogCtrl', function($scope){
-    $('.news').hide();
-  })
-  .controller('walkCtrl', function($scope){
-    $('.news').hide();
   })
   //transactions controller
   .controller('lcrCtrl', function($scope, $http, $filter){

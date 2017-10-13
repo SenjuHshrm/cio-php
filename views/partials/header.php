@@ -8,7 +8,7 @@
     </button>
   <?php
     if(isset($_SESSION['login'])){
-      echo "<a class='navbar-brand' href='#'>City Information Office - Logged in</a>";
+      echo "<a class='navbar-brand' href='#'>City Information Office - Logged in as ".$_SESSION['userType']."</a>";
     }
     else{
       echo "<a class='navbar-brand' href='#'>City Information Office</a>";
@@ -34,22 +34,31 @@
         <a href='/sanggunian'><span class='fa fa-university'></span>
           Sanggunian</a></li>
       <?php
-      $conn = mysqli_connect('localhost','CIO_DB','m2losdq4','cio_spc');
-      $con = $conn->query("SELECT `pic` FROM `admin_acct_info`;");
-      $imgDB = mysqli_fetch_array($con);
-      $img = $imgDB[0];
       if(isset($_SESSION['login'])){
-        echo "<li class='dropdown'>";
-        echo "<a class='dropdown-toggle login' data-toggle='dropdown' href='#'>";
-        echo "<img src='".$img."' style='width:40px;height:40px;'>&nbsp;".$_SESSION['login']."&nbsp;<span class='fa fa-caret-down'></span></a>";
-        echo "<ul class='dropdown-menu'>";
-        echo "<li><a href='#'><span class='fa fa-chevron-right'></span> Profile</a></li>";
-        echo "<li class='divider'></li>";
-        echo "<li><a href='#'><span class='fa fa-chevron-right'></span> Web Settings</a></li>";
-        echo "<li class='divider'></li>";
-        echo "<li><a href='/logout'><span class='fa fa-chevron-right'></span> Logout</a></li>";
-        echo "</ul>";
-        echo "</li>";
+        if($_SESSION['userType'] == 'Admin'){
+          echo "<li class='dropdown'>";
+          echo "<a class='dropdown-toggle login' data-toggle='dropdown' href='#'>";
+          echo "<img src='".$_SESSION['pic']."' style='width:40px;height:40px;'>&nbsp;".$_SESSION['login']."&nbsp;<span class='fa fa-caret-down'></span></a>";
+          echo "<ul class='dropdown-menu'>";
+          echo "<li><a href='#'><span class='fa fa-chevron-right'></span> Profile</a></li>";
+          echo "<li class='divider'></li>";
+          echo "<li><a href='#'><span class='fa fa-chevron-right'></span> Web Settings</a></li>";
+          echo "<li class='divider'></li>";
+          echo "<li><a href='/logout'><span class='fa fa-chevron-right'></span> Logout</a></li>";
+          echo "</ul>";
+          echo "</li>";
+        }
+        else{
+          echo "<li class='dropdown'>";
+          echo "<a class='dropdown-toggle login' data-toggle='dropdown' href='#'>";
+          echo "<img src='".$_SESSION['pic']."' style='width:40px;height:40px;'>&nbsp;".$_SESSION['login']."&nbsp;<span class='fa fa-caret-down'></span></a>";
+          echo "<ul class='dropdown-menu'>";
+          echo "<li><a href='#'><span class='fa fa-chevron-right'></span> Profile</a></li>";
+          echo "<li class='divider'></li>";
+          echo "<li><a href='/logout'><span class='fa fa-chevron-right'></span> Logout</a></li>";
+          echo "</ul>";
+          echo "</li>";
+        }
       }
       else{
         echo "<li class='dropdown'>";

@@ -31,12 +31,12 @@ app
       .when('/employee-signup', {
         templateUrl:'/views/signup/employee/signup.php',
         controller:'empSignUp',
-        title:'Employee Login'
+        title:'Employee Sign Up'
       })
       .when('/walkin-signup', {
         templateUrl:'/views/signup/walkin/signup.php',
         controller:'wInSignUp',
-        title:'Walk In Login'
+        title:'Walk In Sign Up'
       })
       //Login Routes
       .when('/admin-login', {

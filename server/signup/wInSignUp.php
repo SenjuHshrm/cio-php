@@ -1,4 +1,5 @@
 <?php
+  include(dirname(__FILE__).'/../config.php');
   header('Content-Type: application/json');
   session_start();
   $xobj = file_get_contents('php://input');
@@ -15,6 +16,11 @@
   $gender = $xobjParse->gender;
   $contact = $xobjParse->contact;
   $address = $xobjParse->address;
+  //create unique id
+  $userName = strrev($username);
+  $userPass = $xobjParse->password;
+  $acct = $userName + $userPass;
+  $id = md5($acct);
   //set default for $pic
   if($gender=='male'){
     $pic = '/public/imgs/default/def_prof_male.png';
@@ -27,9 +33,8 @@
     $xobjParse->message = 'Password mismatch.';
   }
   else{
-    $conn = mysqli_connect('localhost','CIO_DB','m2losdq4','cio_spc');
-    $sql = "INSERT INTO walk_acct(username,password)VALUES('$username','$password');";
-    $sql .= "INSERT INTO walk_acct_info(Fname,Mname,Lname,Gender,age,bday,address,contact,pic)VALUES('$fname','$mname','$lname','$gender','$age','$birthday','$address','$contact','$pic');";
+    $sql = "INSERT INTO walk_acct(id,username,password)VALUES('$id','$username','$password');";
+    $sql .= "INSERT INTO walk_acct_info(id,Fname,Mname,Lname,Gender,age,bday,address,contact,pic)VALUES('$id','$fname','$mname','$lname','$gender','$age','$birthday','$address','$contact','$pic');";
 
     if(mysqli_multi_query($conn,$sql)){
       $xobjParse->message = 'You are now registered.';

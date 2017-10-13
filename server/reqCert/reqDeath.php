@@ -1,4 +1,5 @@
 <?php
+  include(dirname(__FILE__).'/../config.php');
   header('Content-Type: application/json');
   session_start();
   $captcha_num = '0123456789ABCDEF';
@@ -17,7 +18,6 @@
   $dLast = $jsonData->rDLast;
   $dDate = $jsonData->dDate;
 
-  $conn = mysqli_connect('localhost','CIO_DB','m2losdq4','cio_spc');
   $sql = "INSERT INTO lcr_reqr(ReqName,ReqMid,ReqLast,id)VALUES('$ReqName','$ReqMid','$ReqLast','$captcha_num');";
   $sql .= "INSERT INTO lcr_death(id,bName,bMid,bLast,bDate)VALUES('$captcha_num','$dName','$dMid','$dLast','$dDate');";
   if(mysqli_multi_query($conn,$sql)){
