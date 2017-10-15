@@ -3,14 +3,14 @@
   header('Content-Type: application/json');
   $resData = file_get_contents('php://input');
   $jsonData = json_decode($resData);
-  $adminUser = $jsonData->wInUser;
-  $adminPass = md5($jsonData->wInPass);
-  $id = md5(strrev($adminUser) + $jsonData->wInPass);
+  $wInUser = $jsonData->wInUser;
+  $wInPass = md5($jsonData->wInPass);
+  $id = md5($wInUser + $wInPass);
   $dbUser = $conn->query("SELECT `username` FROM `walk_acct` WHERE `id`='$id';");
   $dbPass = $conn->query("SELECT `password` FROM `walk_acct` WHERE `id`='$id';");
   $userVal = mysqli_fetch_array($dbUser);
   $passVal = mysqli_fetch_array($dbPass);
-  if(($userVal[0]==$adminUser)&&($passVal[0]==$adminPass)){
+  if(($userVal[0]==$wInUser)&&($passVal[0]==$wInPass)){
     session_start();
     $fnameQuery = $conn->query("SELECT `Fname` FROM `walk_acct_info` WHERE `id`='$id';");
     $mnameQuery = $conn->query("SELECT `Mname` FROM `walk_acct_info` WHERE `id`='$id';");
@@ -28,10 +28,10 @@
     $_SESSION['id'] = $id;
     $jsonData->message = 'success';
   }
-  else if(($userVal[0]!=$adminUser)&&($passVal[0]==$adminPass)){
+  else if(($userVal[0]!=$wInUser)&&($passVal[0]==$wInPass)){
     $jsonData->message = 'Username doesn\'t exist';
   }
-  else if(($userVal[0]==$adminUser)&&($passVal[0]!=$adminPass)){
+  else if(($userVal[0]==$wInUser)&&($passVal[0]!=$wInPass)){
     $jsonData->message = 'Wrong password';
   }
   else{

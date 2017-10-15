@@ -34,30 +34,27 @@ footer{
   height:275px;
   margin:auto;
 }
-.nav-ul-margin{
-  margin-top:30px;
-}
 .content-container{
   background-color:#e6f4ff;
   height:inherit;
-  border:1px solid black;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-bottom:40px;
-  border-radius:15px;
 }
 .content-header{
   background-color:#99d1ff;
   height:inherit;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.mid-header{
+  background-color:#99d1ff;
+  height:inherit;
   margin-bottom:15px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-top-right-radius:15px;
-  border-top-left-radius:15px;
 }
 /*Bootstrap classes overwrite*/
 .navbar-inverse{
   background-color:#006ac1;
   border-bottom:1px solid black;
-  height:70px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .navbar-collapse{

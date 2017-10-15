@@ -17,10 +17,7 @@
   $contact = $xobjParse->contact;
   $address = $xobjParse->address;
   //create unique id
-  $userName = strrev($username);
-  $userPass = $xobjParse->password;
-  $acct = $userName + $userPass;
-  $id = md5($acct);
+  $id = md5($username + $password);
   //set default for $pic
   if($gender=='male'){
     $pic = '/public/imgs/default/def_prof_male.png';

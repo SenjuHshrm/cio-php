@@ -12,9 +12,9 @@
       <script src='/public/js/jquery/jquery.min.js'></script>
       <script src='/public/js/bootstrap/bootstrap.min.js'></script>
       <script src='/public/js/angular/angular.min.js'></script>
-      <script src='/public/js/angular-module.js'></script>
-      <script src='/public/js/angular-routes.js'></script>
-      <script src='/public/js/angular-controller.js'></script>
+      <script src='/public/js/ng-core/angular-module.js'></script>
+      <script src='/public/js/ng-core/angular-routes.js'></script>
+      <script src='/public/js/angular/angular-route.min.js'></script>
     </head>
     <body ng-cloak ng-controller='bodyCtrl'>
       <ng-include src="'/views/partials/header.php'"></ng-include>
@@ -25,5 +25,13 @@
     <footer>
       <ng-include src="'/views/partials/footer.php'"></ng-include>
     </footer>
-    <script src='/public/js/angular/angular-route.min.js'></script>
+    <script src='/public/js/ng-core/angular-loginCtrl.js'></script>
+    <script src='/public/js/ng-core/angular-logoutCtrl.js'></script>
+    <script src='/public/js/ng-core/angular-adminCtrl.js'></script>
+    <script src='/public/js/ng-core/angular-empCtrl.js'></script>
+    <script src='/public/js/ng-core/angular-walkCtrl.js'></script>
+    <script src='/public/js/ng-core/angular-navCtrl.js'></script>
+    <script src='/public/js/ng-core/angular-signupCtrl.js'></script>
+    <script src='/public/js/ng-core/angular-transactCtrl.js'></script>
+    <script src='/public/js/ng-core/angular-titleCtrl.js'></script>
   </html>

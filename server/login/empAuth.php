@@ -3,14 +3,14 @@
   header('Content-Type: application/json');
   $resData = file_get_contents('php://input');
   $jsonData = json_decode($resData);
-  $adminUser = $jsonData->empUser;
-  $adminPass = md5($jsonData->empPass);
-  $id = md5(strrev($adminUser) + $jsonData->empPass);
+  $empUser = $jsonData->empUser;
+  $empPass = md5($jsonData->empPass);
+  $id = md5($empUser + $empPass);
   $dbUser = $conn->query("SELECT `username` FROM `emp_acct` WHERE `id`='$id';");
   $dbPass = $conn->query("SELECT `password` FROM `emp_acct` WHERE `id`='$id';");
   $userVal = mysqli_fetch_array($dbUser);
   $passVal = mysqli_fetch_array($dbPass);
-  if(($userVal[0]==$adminUser)&&($passVal[0]==$adminPass)){
+  if(($userVal[0]==$empUser)&&($passVal[0]==$empPass)){
     session_start();
     $fnameQuery = $conn->query("SELECT `Fname` FROM `emp_acct_info` WHERE `id`='$id';");
     $mnameQuery = $conn->query("SELECT `Mname` FROM `emp_acct_info` WHERE `id`='$id';");
@@ -28,10 +28,10 @@
     $_SESSION['id'] = $id;
     $jsonData->message = 'success';
   }
-  else if(($userVal[0]!=$adminUser)&&($passVal[0]==$adminPass)){
+  else if(($userVal[0]!=$empUser)&&($passVal[0]==$empPass)){
     $jsonData->message = 'Username doesn\'t exist';
   }
-  else if(($userVal[0]==$adminUser)&&($passVal[0]!=$adminPass)){
+  else if(($userVal[0]==$empUser)&&($passVal[0]!=$empPass)){
     $jsonData->message = 'Wrong password';
   }
   else{
