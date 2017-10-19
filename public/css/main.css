@@ -28,6 +28,9 @@ footer{
   background-color:#99d1ff;
 }
 /*User defined properties for classes*/
+.autoresize{
+  resize:none;
+}
 .img-border{
   border:3px double black;
   width:275px;

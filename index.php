@@ -25,6 +25,7 @@
     <footer>
       <ng-include src="'/views/partials/footer.php'"></ng-include>
     </footer>
+    <script src='/public/js/ng-core/angular-webSetCtrl.js'></script>
     <script src='/public/js/ng-core/angular-loginCtrl.js'></script>
     <script src='/public/js/ng-core/angular-logoutCtrl.js'></script>
     <script src='/public/js/ng-core/angular-adminCtrl.js'></script>

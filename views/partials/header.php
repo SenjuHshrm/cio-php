@@ -6,15 +6,7 @@
       <span class='icon-bar'></span>
       <span class='icon-bar'></span>
     </button>
-  <?php
-    if(isset($_SESSION['login'])){
-      echo "<a class='navbar-brand' href='#'>City Information Office - Logged in as ".$_SESSION['userType']."</a>";
-    }
-    else{
-      echo "<a class='navbar-brand' href='#'>City Information Office</a>";
-    }
-    ?>
-
+    <a class='navbar-brand' href='#'>City Information Office</a>
   </div>
   <div class='collapse navbar-collapse' id='example-navbar-collapse'>
     <ul class='nav navbar-nav navbar-right nav-ul-margin'>

@@ -101,6 +101,3 @@ app
       reader.readAsDataURL(element.files[0]);
     }
   })
-  .controller('settingCtrl', function($scope){
-    $('.news').hide();
-  })
