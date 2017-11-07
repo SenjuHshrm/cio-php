@@ -5,7 +5,7 @@
   $jsonData = json_decode($resData);
   $adminUser = $jsonData->adminUser;
   $adminPass = md5($jsonData->adminPass);
-  $id = md5($adminUser + $adminPass);
+  $id = md5($adminUser.$adminPass);
   $dbUser = $conn->query("SELECT `admin_username` FROM `admin_acct` WHERE `id`='$id';");
   $dbPass = $conn->query("SELECT `admin_password` FROM `admin_acct` WHERE `id`='$id';");
   $userVal = mysqli_fetch_array($dbUser);
