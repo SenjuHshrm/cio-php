@@ -12,9 +12,12 @@ h1, h2, h3, h4, h5, h6{
   margin-top:0px;
   padding:20px;
 }
-/*body{
-  margin-top:70px;
-}*/
+body{
+  background-repeat:no-repeat;
+  background-position:center;
+  background-attachment:fixed;
+  background-size:cover;
+}
 hr{
   border-top:1px solid #07248c;
 }
@@ -27,6 +30,11 @@ footer{
   position:fixed;
   background-color:#99d1ff;
 }
+p{
+  color:black;
+  font-size:13px;
+  font-weight:bold;
+}
 /*User defined properties for classes*/
 .autoresize{
   resize:none;
@@ -38,34 +46,40 @@ footer{
   margin:auto;
 }
 .content-container{
-  background-color:#e6f4ff;
+  background-color:rgba(230, 244, 255, 0.7);
   height:inherit;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-bottom:40px;
 }
 .content-header{
-  background-color:#99d1ff;
+  background-color:rgba(153, 209, 255, 0.7);
   height:inherit;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .mid-header{
-  background-color:#99d1ff;
+  background-color:rgba(153, 209, 255, 0.7);
   height:inherit;
   margin-bottom:15px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 /*Bootstrap classes overwrite*/
-.navbar-inverse{
-  background-color:#006ac1;
-  border-bottom:1px solid black;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-.navbar-collapse{
-  background-color:#006ac1;
+.navbar-inverse, .navbar-collapse{
+  background-color:rgba(0, 106, 193, 0.4);
+  border-color:rgba(0, 106, 193, 0.4);
 }
 .control-label{
   text-align:center;
 }
 .navbar-nav>li>a.login{
   padding-top:7px;
+}
+.btn{
+  border-radius:0px;
+  margin-bottom:10px;
+}
+.form-control{
+  border-radius:0px;
+}
+.navbar-inverse .navbar-nav>li>a,
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+  color:black;
+  font-size:17px;
 }

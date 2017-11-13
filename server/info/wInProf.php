@@ -1,6 +1,6 @@
 <?php
   header('Content-Type: application/json');
-  include(dirname(__FILE__).'/../config.php');
+  include($_SERVER['DOCUMENT_ROOT'].'/config/connect.php');
   session_start();
   $xobj = new stdClass();
   if(!isset($_SESSION['id'])){
@@ -8,7 +8,7 @@
   }
   else{
     $id = $_SESSION['id'];
-    $query = $conn->query("SELECT Fname,Mname,Lname,Gender,age,bday,address,contact,pic FROM `walk_acct_info` WHERE `id`='$id';");
+    $query = $conn->query("SELECT * FROM walk_acct_info WHERE id ='$id';");
     $row = mysqli_fetch_assoc($query);
     $xobj->fname = $row["Fname"];
     $xobj->mname = $row["Mname"];

@@ -1,7 +1,16 @@
 app
-  .controller('settingCtrl', function($scope){
-
+  .controller('settingCtrl', function($scope, $http){
     $('.news').hide();
+    $http({
+      method:'GET',
+      url:'/server/info/adminProf.php',
+      cache:true
+    })
+    .success(function(data){
+      if(data.session=='No session'){
+        window.location.href='/';
+      }
+    })
   })
   .controller('infoCtrl', function($scope){
     $scope.intro = 'In this page, you can update some parts of the web application';
@@ -46,4 +55,17 @@ app
         }
       }
     });
+  })
+  .controller('pollCtrl', function($scope, $http){
+    $scope.pollQuest = {};
+    $scope.setPoll = function(){
+      $http({
+        method:'POST',
+        url:'',
+        data:$scope.pollQuest,
+        headers:{
+          'Content-Type':'application/json'
+        }
+      })
+    }
   })

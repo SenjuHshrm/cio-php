@@ -39,20 +39,11 @@ app
         title:'Walk In Sign Up'
       })
       //Login Routes
-      .when('/admin-login', {
-        templateUrl:'/views/login/adminLogin.php',
-        controller:'adminLogCtrl',
-        title:'Admin Login'
-      })
-      .when('/emp-login', {
-        templateUrl:'/views/login/empLogin.php',
-        controller:'empLogCtrl',
-        title:'Employee Login'
-      })
-      .when('/walkIn-login', {
-        templateUrl:'/views/login/wInLogin.php',
-        controller:'walkCtrl',
-        title:'Walk In Login'
+      .when('/login', {
+        templateUrl:'/views/login/login.php',
+        controller:'LoginCtrl',
+        title:'Login',
+        publicAccess:true
       })
       //logout route
       .when('/logout', {
@@ -80,6 +71,11 @@ app
         templateUrl:'/views/users/walkin/profile.php',
         controller:'wInProf',
         title:'Walk In Profile'
+      })
+      .otherwise({
+        templateUrl:'/views/error/err404.php',
+        controller:'err404Ctrl',
+        title:'Not found'
       })
     $locationProvider.html5Mode(true);
   })

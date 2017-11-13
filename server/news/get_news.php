@@ -1,10 +1,10 @@
 <?php
-  include($_SERVER['DOCUMENT_ROOT'].'/server/config.php');
+  include($_SERVER['DOCUMENT_ROOT'].'/config/connect.php');
   header('Content-Type: application/json');
   $newsArr = array();
   $xobj = new stdClass();
   $news = $conn->query("SELECT `news_list` FROM `news`;");
-  if($news->num_rows> 0){
+  if($news->num_rows > 0){
     while($row = $news->fetch_assoc()){
       $newsArr[] = $row["news_list"];
     }

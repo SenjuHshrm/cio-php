@@ -6,15 +6,15 @@ app
       $('div.navbar-collapse').removeClass('in');
       $scope.$location = $location;
       var loc = $location.path();
-      if((loc=='/admin-login')||
-      (loc=='/emp-login')||
-      (loc=='/walkIn-login')||
-      (loc=='/employee-signup')||
-      (loc=='/walkin-signup')){
-        $('.news').hide();
+      if((loc == '/')||
+      (loc == '/loc-civ-reg')||
+      (loc == '/human-resource')||
+      (loc == '/senior-citizen')||
+      (loc == '/sanggunian')){
+        $('.news').show();
       }
       else{
-        $('.news').show();
+        $('.news').hide();
       }
     });
   })
@@ -36,7 +36,6 @@ app
         var count = 0;
         $interval(function(){
           $scope.flashNews = $scope.Arr[count];
-          console.log($scope.flashNews);
           count++;
           if($scope.Arr.length == count){
             count = 0;

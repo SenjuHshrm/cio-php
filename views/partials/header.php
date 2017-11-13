@@ -51,7 +51,7 @@
           echo "</ul>";
           echo "</li>";
         }
-        else if($_SESSION['userType'] == 'Walk in'){
+        else if($_SESSION['userType'] == 'WalkIn'){
           echo "<li class='dropdown'>";
           echo "<a class='dropdown-toggle login' data-toggle='dropdown' href='#'>";
           echo "<img src='".$_SESSION['pic']."' style='width:40px;height:40px;'>&nbsp;".$_SESSION['login']."&nbsp;<span class='fa fa-caret-down'></span></a>";
@@ -75,17 +75,7 @@
         echo "</ul>";
         echo "</li>";
         echo "<li class='dropdown'>";
-        echo "<a class='dropdown-toggle' data-toggle='dropdown' href='#'><span class='fa fa-sign-in'></span> Login <span class='fa fa-caret-down'></span>";
-        echo "<ul class='dropdown-menu'>";
-        echo "<li>";
-        echo "<a href='/admin-login'><span class='fa fa-chevron-right'></span> Admin</a></li>";
-        echo "<li class='divider'></li>";
-        echo "<li>";
-        echo "<a href='/emp-login'><span class='fa fa-chevron-right'></span> Employee</a></li>";
-        echo "<li class='divider'></li>";
-        echo "<li>";
-        echo "<a href='/walkIn-login'><span class='fa fa-chevron-right'></span> Walk In</a></li>";
-        echo "</ul>";
+        echo "<a href='/login'><span class='fa fa-sign-in'></span> Login </a>";
         echo "</li>";
     }
       ?>

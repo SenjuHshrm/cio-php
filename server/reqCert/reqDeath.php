@@ -19,7 +19,7 @@
   $dDate = $jsonData->dDate;
 
   $sql = "INSERT INTO lcr_reqr(ReqName,ReqMid,ReqLast,id)VALUES('$ReqName','$ReqMid','$ReqLast','$captcha_num');";
-  $sql .= "INSERT INTO lcr_death(id,bName,bMid,bLast,bDate)VALUES('$captcha_num','$dName','$dMid','$dLast','$dDate');";
+  $sql .= "INSERT INTO lcr_death(id,dName,dMid,dLast,dDate)VALUES('$captcha_num','$dName','$dMid','$dLast','$dDate');";
   if(mysqli_multi_query($conn,$sql)){
     $jsonData->message = 'Data Sent';
   } else{
