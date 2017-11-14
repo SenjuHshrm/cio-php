@@ -1,5 +1,5 @@
 <?php
-  include($_SERVER['DOCUMENT_ROOT'].'/server/config.php');
+  include($_SERVER['DOCUMENT_ROOT'].'/config/connect.php');
   session_start();
   $id = $_SESSION['id'];
   $username_db = $conn->query("SELECT `username` FROM `walk_acct` WHERE `id`='$id';");

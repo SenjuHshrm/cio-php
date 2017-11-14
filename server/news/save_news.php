@@ -1,5 +1,5 @@
 <?php
-  include($_SERVER['DOCUMENT_ROOT'].'/server/config.php');
+  include($_SERVER['DOCUMENT_ROOT'].'/config/connect.php');
   header('Content-Type: application/json');
   session_start();
   $xobj = json_decode(file_get_contents('php://input'));

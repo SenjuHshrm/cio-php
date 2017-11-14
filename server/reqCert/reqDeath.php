@@ -1,5 +1,5 @@
 <?php
-  include(dirname(__FILE__).'/../config.php');
+  include($_SERVER['DOCUMENT_ROOT'].'/config/connect.php');
   header('Content-Type: application/json');
   session_start();
   $captcha_num = '0123456789ABCDEF';

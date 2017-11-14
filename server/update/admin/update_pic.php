@@ -1,5 +1,5 @@
 <?php
-  include($_SERVER['DOCUMENT_ROOT'].'/server/config.php');
+  include($_SERVER['DOCUMENT_ROOT'].'/config/connect.php');
   session_start();
   $id = $_SESSION['id'];
   $username_db = $conn->query("SELECT `admin_username` FROM `admin_acct` WHERE `id`='$id';");
