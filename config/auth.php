@@ -26,5 +26,40 @@
     return $res;
   }
 
-  // function SignUp()
+  function SignUp($obj,$AcctTbl,$InfoTbl){
+    include($_SERVER['DOCUMENT_ROOT'].'/config/connect.php');
+    $password = md5($obj->password);
+    $res = new stdClass();
+    $sql = "INSERT INTO $AcctTbl(id,username,password)VALUES('$obj->id','$obj->username','$password');";
+    $sql .= "INSERT INTO $InfoTbl(id,Fname,Mname,Lname,Gender,age,bday,address,contact,pic)VALUES('$obj->id','$obj->fname','$obj->mname','$obj->lname','$obj->gender',$obj->age,'$obj->birthday','$obj->address','$obj->contact','$obj->pic');";
+
+    if(mysqli_multi_query($conn,$sql)){
+      $res->msg = 'You are now registered.';
+      $res->type = 'success';
+    }
+    else{
+      $res->msg = 'An error occured while connecting';
+      $res->type = 'danger';
+    }
+    mysqli_close($conn);
+    return $res;
+  }
+
+  // function UpdateAcct($user,$obj,$id){
+  //   include($_SERVER['DOCUMENT_ROOT'].'/config/connect.php');
+  //   $col = array('Fname','Mname','Lname','age','contact','address','bday');
+  //   $len = count($col);
+  //   $prop = array();
+  //   $xobj = get_object_vars($obj);
+  //   foreach($xobj as $key=>$val){
+  //     $prop[] = $val;
+  //   }
+  //   if($user == 'Admin'){
+  //     for($i = 0; $i < $len; $i++){
+  //       if(!empty($prop[$i])){
+  //         $conn->query("UPDATE `admin_acct_info` SET $col[$i]='$prop[$i]' WHERE `id`='$id';");
+  //       }
+  //     }
+  //   }
+  // }
 ?>

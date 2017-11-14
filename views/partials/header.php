@@ -65,14 +65,7 @@
       }
       else{
         echo "<li class='dropdown'>";
-        echo "<a class='dropdown-toggle' data-toggle='dropdown' href='#'><span class='fa fa-user-plus'></span> Sign Up <span class='fa fa-caret-down'></span></a>";
-        echo "<ul class='dropdown-menu'>";
-        echo "<li>";
-        echo "<a href='/employee-signup'><span class='fa fa-chevron-right'></span> Employee</a></li>";
-        echo "<li class='divider'></li>";
-        echo "<li>";
-        echo "<a href='/walkin-signup'><span class='fa fa-chevron-right'></span> Walk In</a></li>";
-        echo "</ul>";
+        echo "<a href='/signup'><span class='fa fa-user-plus'></span> Sign Up </a>";
         echo "</li>";
         echo "<li class='dropdown'>";
         echo "<a href='/login'><span class='fa fa-sign-in'></span> Login </a>";

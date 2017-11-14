@@ -28,10 +28,10 @@ app
         title:'Sangguniang Brgy'
       })
       //signup routes
-      .when('/employee-signup', {
-        templateUrl:'/views/signup/employee/signup.php',
-        controller:'empSignUp',
-        title:'Employee Sign Up'
+      .when('/signup', {
+        templateUrl:'/views/signup/signup.php',
+        controller:'signUpCtrl',
+        title:'Sign Up'
       })
       .when('/walkin-signup', {
         templateUrl:'/views/signup/walkin/signup.php',
@@ -42,8 +42,7 @@ app
       .when('/login', {
         templateUrl:'/views/login/login.php',
         controller:'LoginCtrl',
-        title:'Login',
-        publicAccess:true
+        title:'Login'
       })
       //logout route
       .when('/logout', {

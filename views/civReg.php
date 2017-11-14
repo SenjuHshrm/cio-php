@@ -1,6 +1,6 @@
 <div class='container-fluid' ng-controller='lcrCtrl'>
   <div class='row'>
-    <div class='col-md-3'>
+    <div class='col-xs-4 col-md-3'>
       <div class='content-container'>
         <h2 class='content-header'>Transactions</h2>
         <ul class='nav nav-tabs nav-stacked'>
@@ -24,7 +24,7 @@
         <br>
       </div>
     </div>
-    <div class='col-md-6'>
+    <div class='col-xs-8 col-md-6'>
       <div class='content-container'>
         <div class='tab-content'>
           <div id='birth' class='tab-pane fade in active'>
@@ -39,7 +39,7 @@
         </div>
       </div>
     </div>
-    <div class='col-md-3'>
+    <div class='col-xs-12 col-md-3'>
       <div class='content-container'>
         <h2 class='content-header'>Sponsor</h2>
       </div>

@@ -5,19 +5,19 @@
     <div class='form-group'>
       <label class='col-xs-3 control-label' for='reqBName'>First Name:</label>
       <div class='col-xs-9'>
-        <input type='text' name='reqBName' class='form-control' ng-model='birthData.ReqName'>
+        <input type='text' name='reqBName' class='form-control' ng-model='birthData.ReqName' required>
       </div>
     </div>
     <div class='form-group'>
       <label class='col-xs-3 control-label' for='reqBMid'>Middle Name:</label>
       <div class='col-xs-9'>
-        <input type='text' name='reqBMid' class='form-control' ng-model='birthData.ReqMid'>
+        <input type='text' name='reqBMid' class='form-control' ng-model='birthData.ReqMid' required>
       </div>
     </div>
     <div class='form-group'>
       <label class='col-xs-3 control-label' for='reqBLast'>Last Name:</label>
       <div class='col-xs-9'>
-        <input type='text' name='reqBLast' class='form-control' ng-model='birthData.ReqLast'>
+        <input type='text' name='reqBLast' class='form-control' ng-model='birthData.ReqLast' required>
       </div>
     </div>
     <hr>
@@ -25,25 +25,25 @@
     <div class='form-group'>
       <label class='col-xs-3 control-label' for='bFName'>First Name:</label>
       <div class='col-xs-9'>
-        <input type='text' name='bFName' class='form-control' ng-model='birthData.rBName'>
+        <input type='text' name='bFName' class='form-control' ng-model='birthData.rBName' required>
       </div>
     </div>
     <div class='form-group'>
       <label class='col-xs-3 control-label' for='bMName'>Middle Name:</label>
       <div class='col-xs-9'>
-        <input type='text' name='bMName' class='form-control' ng-model='birthData.rBMid'>
+        <input type='text' name='bMName' class='form-control' ng-model='birthData.rBMid' required>
       </div>
     </div>
     <div class='form-group'>
       <label class='col-xs-3 control-label' for='bLName'>Last Name:</label>
       <div class='col-xs-9'>
-        <input type='text' name='bLName' class='form-control' ng-model='birthData.rBLast'>
+        <input type='text' name='bLName' class='form-control' ng-model='birthData.rBLast' required>
       </div>
     </div>
     <div class='form-group'>
       <label class='col-xs-3 control-label' for='bDate'>Birth Date:</label>
       <div class='col-xs-9'>
-        <input type='date' name='bDate' class='form-control'>
+        <input type='date' name='bDate' class='form-control' required>
       </div>
     </div>
     <div class='form-group'>
