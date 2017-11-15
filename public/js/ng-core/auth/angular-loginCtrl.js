@@ -35,7 +35,8 @@ app
           .success(function(data){
             var msg = data.message;
             if(msg=='success'){
-              window.location.href='/';
+              var url = '/' + data.user + '/' + data.name + '/';
+              window.location.href= url;
             }
             else{
               // window.location.href='/login';

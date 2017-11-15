@@ -9,10 +9,10 @@
   $resObj = new stdClass();
 
   if($jsonData->userType == "admin"){
-    $resObj->message = LoginAuth("admin_acct", "admin_acct_info", "Admin", $id);
+    $resObj = LoginAuth("admin_acct", "admin_acct_info", "Admin", $id);
   }
   else if($jsonData->userType == "emply"){
-    $resObj->message = LoginAuth("emp_acct", "emp_acct_info", "Employee", $id);
+    $resObj = LoginAuth("emp_acct", "emp_acct_info", "Employee", $id);
   }
   else{
     $resObj->message = LoginAuth("walk_acct", "walk_acct_info", "WalkIn", $id);

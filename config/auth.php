@@ -3,6 +3,7 @@
   function LoginAuth($AcctTbl, $InfoTbl, $user, $id){
     include($_SERVER['DOCUMENT_ROOT'].'/config/connect.php');
     session_start();
+    $res = new stdClass();
     $dbUser = mysqli_fetch_assoc($conn->query("SELECT username FROM $AcctTbl WHERE id='$id';"));
     $dbPass = mysqli_fetch_assoc($conn->query("SELECT password FROM $AcctTbl WHERE id='$id';"));
     if(($dbUser != false) && ($dbPass != false)){
@@ -11,7 +12,10 @@
       $_SESSION['pic'] = $dbInfo['pic'];
       $_SESSION['userType'] = $user;
       $_SESSION['id'] = $dbInfo['id'];
-      $res = 'success';
+      $_SESSION['username'] = $dbUser['username'];
+      $res->message = 'success';
+      $res->name = $dbUser['username'];
+      $res->user = $_SESSION['userType'];
     }
     else if(($dbUser == false) && ($dbPass != false)){
       $res = 'Wrong Username.';

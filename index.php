@@ -29,6 +29,7 @@
     <script src='/public/js/ng-core/angular-module.js'></script>
     <script src='/public/js/ng-core/controllers/angular-viewCtrl.js'></script>
     <script src='/public/js/ng-core/route/angular-routes.js'></script>
+    <script src='/public/js/ng-core/route/angular-authRoute.js'></script>
     <script src='/public/js/ng-core/auth/angular-signupCtrl.js'></script>
     <script src='/public/js/ng-core/auth/angular-loginCtrl.js'></script>
     <script src='/public/js/ng-core/auth/angular-logoutCtrl.js'></script>

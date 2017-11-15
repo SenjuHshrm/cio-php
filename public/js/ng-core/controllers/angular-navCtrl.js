@@ -6,16 +6,13 @@ app
       $('div.navbar-collapse').removeClass('in');
       $scope.$location = $location;
       var loc = $location.path();
-      if((loc == '/')||
-      (loc == '/loc-civ-reg')||
-      (loc == '/human-resource')||
-      (loc == '/senior-citizen')||
-      (loc == '/sanggunian')){
-        $('.news').show();
+      if((loc=='/signup')||
+        (loc=='/login')){
+        $('.news').hide();
         document.body.style.backgroundColor = "white";
       }
       else{
-        $('.news').hide();
+        $('.news').show();
         document.body.style.backgroundColor = "white";
       }
     });

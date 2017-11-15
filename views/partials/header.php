@@ -10,21 +10,42 @@
   </div>
   <div class='collapse navbar-collapse' id='example-navbar-collapse'>
     <ul class='nav navbar-nav navbar-right nav-ul-margin'>
-      <li>
-        <a href='/'><span class='fa fa-home'></span>
-          Home</a></li>
-      <li>
-        <a href='/loc-civ-reg'><span class='fa fa-th'></span>
-          Local Civil Registry</a></li>
-      <li>
-        <a href='/human-resource'><span class='fa fa-stack-exchange'></span>
-          Human Resource</a></li>
-      <li>
-        <a href='/senior-citizen'><span class='fa fa-users'></span>
-          Senior Citizen</a></li>
-      <li>
-        <a href='/sanggunian'><span class='fa fa-university'></span>
-          Sanggunian</a></li>
+      <?php
+        if(isset($_SESSION['login'])){
+          echo "<li>";
+          echo "  <a href='/".$_SESSION['userType']."/".$_SESSION['username']."/'><span class='fa fa-home'></span>";
+          echo "    Home</a></li>";
+          echo "<li>";
+          echo "  <a href='/".$_SESSION['userType']."/".$_SESSION['username']."/loc-civ-reg'><span class='fa fa-th'></span>";
+          echo "    Local Civil Registry</a></li>";
+          echo "<li>";
+          echo "  <a href='/".$_SESSION['userType']."/".$_SESSION['username']."/human-resource'><span class='fa fa-stack-exchange'></span>";
+          echo "    Human Resource</a></li>";;
+          echo "<li>";
+          echo "  <a href='/".$_SESSION['userType']."/".$_SESSION['username']."/senior-citizen'><span class='fa fa-users'></span>";
+          echo "    Senior Citizen</a></li>";
+          echo "<li>";
+          echo "  <a href='/".$_SESSION['userType']."/".$_SESSION['username']."/sanggunian'><span class='fa fa-university'></span>";
+          echo "    Sanggunian</a></li>";
+        }
+        else{
+          echo "<li>";
+          echo "  <a href='/'><span class='fa fa-home'></span>";
+          echo "    Home</a></li>";
+          echo "<li>";
+          echo "  <a href='/loc-civ-reg'><span class='fa fa-th'></span>";
+          echo "    Local Civil Registry</a></li>";
+          echo "<li>";
+          echo "  <a href='/human-resource'><span class='fa fa-stack-exchange'></span>";
+          echo "    Human Resource</a></li>";
+          echo "<li>";
+          echo "  <a href='/senior-citizen'><span class='fa fa-users'></span>";
+          echo "    Senior Citizen</a></li>";
+          echo "<li>";
+          echo "  <a href='/sanggunian'><span class='fa fa-university'></span>";
+          echo "    Sanggunian</a></li>";
+        }
+      ?>
       <?php
       if(isset($_SESSION['login'])){
         if($_SESSION['userType'] == 'Admin'){
@@ -32,9 +53,9 @@
           echo "<a class='dropdown-toggle login' data-toggle='dropdown' href='#'>";
           echo "<img src='".$_SESSION['pic']."' style='width:40px;height:40px;'>&nbsp;".$_SESSION['login']."&nbsp;<span class='fa fa-caret-down'></span></a>";
           echo "<ul class='dropdown-menu'>";
-          echo "<li><a href='/admin-profile'><span class='fa fa-chevron-right'></span> Profile</a></li>";
+          echo "<li><a href='".$_SESSION['userType']."/".$_SESSION['username']."/admin-profile'><span class='fa fa-chevron-right'></span> Profile</a></li>";
           echo "<li class='divider'></li>";
-          echo "<li><a href='/settings'><span class='fa fa-chevron-right'></span> Web Settings</a></li>";
+          echo "<li><a href='".$_SESSION['userType']."/".$_SESSION['username']."/settings'><span class='fa fa-chevron-right'></span> Web Settings</a></li>";
           echo "<li class='divider'></li>";
           echo "<li><a href='/logout'><span class='fa fa-chevron-right'></span> Logout</a></li>";
           echo "</ul>";
@@ -45,7 +66,7 @@
           echo "<a class='dropdown-toggle login' data-toggle='dropdown' href='#'>";
           echo "<img src='".$_SESSION['pic']."' style='width:40px;height:40px;'>&nbsp;".$_SESSION['login']."&nbsp;<span class='fa fa-caret-down'></span></a>";
           echo "<ul class='dropdown-menu'>";
-          echo "<li><a href='/emp-profile'><span class='fa fa-chevron-right'></span> Profile</a></li>";
+          echo "<li><a href='".$_SESSION['userType']."/".$_SESSION['username']."/emp-profile'><span class='fa fa-chevron-right'></span> Profile</a></li>";
           echo "<li class='divider'></li>";
           echo "<li><a href='/logout'><span class='fa fa-chevron-right'></span> Logout</a></li>";
           echo "</ul>";
@@ -56,7 +77,7 @@
           echo "<a class='dropdown-toggle login' data-toggle='dropdown' href='#'>";
           echo "<img src='".$_SESSION['pic']."' style='width:40px;height:40px;'>&nbsp;".$_SESSION['login']."&nbsp;<span class='fa fa-caret-down'></span></a>";
           echo "<ul class='dropdown-menu'>";
-          echo "<li><a href='/walkin-profile'><span class='fa fa-chevron-right'></span> Profile</a></li>";
+          echo "<li><a href='".$_SESSION['userType']."/".$_SESSION['username']."/walkin-profile'><span class='fa fa-chevron-right'></span> Profile</a></li>";
           echo "<li class='divider'></li>";
           echo "<li><a href='/logout'><span class='fa fa-chevron-right'></span> Logout</a></li>";
           echo "</ul>";
