@@ -6,6 +6,8 @@
       <meta charset='utf-8'>
       <meta name='viewport' content='width=device-width, initial-scale=1.0'>
       <meta http-equiv='X-UA-Compatible' content='IE=Edge'>
+      <meta name='keywords' content='Information, City Information Office, City Information'>
+      <meta name='author' content='Renzo L. Dimasapit'>
       <link rel='stylesheet' href='/public/css/bootstrap/bootstrap.min.css'>
       <link rel='stylesheet' href='/public/css/bootstrap/font-awesome.min.css'>
       <link rel='stylesheet' href='/public/css/main.css'>
@@ -24,7 +26,8 @@
     <footer>
       <ng-include src="'/views/partials/footer.php'"></ng-include>
     </footer>
-    <script src='public/js/ng-core/angular-module.js'></script>
+    <script src='/public/js/ng-core/angular-module.js'></script>
+    <script src='/public/js/ng-core/controllers/angular-viewCtrl.js'></script>
     <script src='/public/js/ng-core/route/angular-routes.js'></script>
     <script src='/public/js/ng-core/auth/angular-signupCtrl.js'></script>
     <script src='/public/js/ng-core/auth/angular-loginCtrl.js'></script>

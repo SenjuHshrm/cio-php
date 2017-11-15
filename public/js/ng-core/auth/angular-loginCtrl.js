@@ -58,15 +58,3 @@ app
     })
   })
   //other ctrls - to be separated soon
-  .controller('homeCtrl', function($scope){
-
-  })
-  .controller('hrCtrl', function($scope){
-
-  })
-  .controller('scCtrl', function($scope){
-
-  })
-  .controller('sbCtrl', function($scope){
-
-  })

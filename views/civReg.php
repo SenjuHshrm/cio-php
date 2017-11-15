@@ -1,11 +1,13 @@
 <div class='container-fluid' ng-controller='lcrCtrl'>
   <div class='row'>
-    <div class='col-xs-4 col-md-3'>
-      <div class='content-container'>
-        <h2 class='content-header'>Transactions</h2>
+    <div class='col-xs-1 col-md-2'>
+      <span style='font-size:30px;cursor:pointer' ng-click ='openNav()' class='fa fa-bars'></span>
+      <div id='mySidenav' class='sidenav'>
+        <a href='javascript:void(0)' class='closebtn' ng-click ='closeNav()'>&times;</a>
+        <span>Transactions</span>
         <ul class='nav nav-tabs nav-stacked'>
           <li>
-            <a data-target='#birth' data-toggle='tab'><span class='fa fa-child'></span> Birth Certificate</a>
+            <a data-target='#birth' data-toggle='tab' target='#birth'><span class='fa fa-child'></span> Birth Certificate</a>
           </li>
           <li>
             <a data-target='#marriage' data-toggle='tab'><span class='fa fa-heart-o'></span> Marriage Certificate</a>
@@ -15,16 +17,13 @@
           </li>
           <br>
         </ul>
-      </div>
-      <div class='content-container'>
-        <h2 class='content-header'>Forms</h2>
-        <button type='button' class='btn btn-default btn-block'><span class='fa fa-child'></span> Birth Certificate</button>
-        <button type='button' class='btn btn-warning btn-block'><span class='fa fa-heart-o'></span> Marriage Certificate</button>
-        <button type='button' class='btn btn-info btn-block'><span class='fa fa-plus'></span> Death Certificate</button>
-        <br>
+        <span>Forms</span>
+        <a href='#'><span class='fa fa-child'></span> Birth Certificate</a>
+        <a href='#'><span class='fa fa-heart-o'></span> Marriage Certificate</a>
+        <a href='#'><span class='fa fa-plus'></span> Death Certificate</a>
       </div>
     </div>
-    <div class='col-xs-8 col-md-6'>
+    <div class='col-xs-10 col-md-8'>
       <div class='content-container'>
         <div class='tab-content'>
           <div id='birth' class='tab-pane fade in active'>
@@ -39,7 +38,7 @@
         </div>
       </div>
     </div>
-    <div class='col-xs-12 col-md-3'>
+    <div class='col-xs-12 col-md-2'>
       <div class='content-container'>
         <h2 class='content-header'>Sponsor</h2>
       </div>

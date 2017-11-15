@@ -12,9 +12,11 @@ app
       (loc == '/senior-citizen')||
       (loc == '/sanggunian')){
         $('.news').show();
+        document.body.style.backgroundColor = "white";
       }
       else{
         $('.news').hide();
+        document.body.style.backgroundColor = "white";
       }
     });
   })
