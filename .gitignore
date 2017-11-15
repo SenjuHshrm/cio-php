@@ -1,1 +1,10 @@
 *.sql
+
+public/imgs/admin/*.jpg
+public/imgs/admin/*.png
+
+public/imgs/emp/*.jpg
+public/imgs/emp/*.png
+
+public/imgs/walkin/*.jpg
+public/imgs/walkin/*.png
