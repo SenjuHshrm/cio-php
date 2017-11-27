@@ -4,7 +4,7 @@ app
     $('.news').hide();
     $http({
       method:'GET',
-      url:'/server/info/adminProf.php',
+      url:'/server/info/viewProfile.php',
       cache:true
     })
     .success(function(data){
@@ -17,12 +17,49 @@ app
         $scope.fname = data.fname;
         $scope.mname = data.mname;
         $scope.lname = data.lname;
-        $scope.bday = data.bday;
+        var bdayStr = data.bday.split('-');
         $scope.gender = data.gender;
         $scope.age = data.age;
         $scope.address = data.address;
         $scope.contact = data.contact;
         $scope.pic = data.pic;
+        switch(bdayStr[1]){
+          case '01':
+            $scope.bday = 'January ' + bdayStr[2] + ', ' + bdayStr[0];
+            break;
+          case '02':
+            $scope.bday = 'February ' + bdayStr[2] + ', ' + bdayStr[0];
+            break;
+          case '03':
+            $scope.bday = 'March ' + bdayStr[2] + ', ' + bdayStr[0];
+            break;
+          case '04':
+            $scope.bday = 'April ' + bdayStr[2] + ', ' + bdayStr[0];
+            break;
+          case '05':
+            $scope.bday = 'May ' + bdayStr[2] + ', ' + bdayStr[0];
+            break;
+          case '06':
+            $scope.bday = 'June ' + bdayStr[2] + ', ' + bdayStr[0];
+            break;
+          case '07':
+            $scope.bday = 'July ' + bdayStr[2] + ', ' + bdayStr[0];
+            break;
+          case '08':
+            $scope.bday = 'August ' + bdayStr[2] + ', ' + bdayStr[0];
+            break;
+          case '09':
+            $scope.bday = 'September ' + bdayStr[2] + ', ' + bdayStr[0];
+            break;
+          case '10':
+            $scope.bday = 'October ' + bdayStr[2] + ', ' + bdayStr[0];
+            break;
+          case '11':
+            $scope.bday = 'November ' + bdayStr[2] + ', ' + bdayStr[0];
+            break;
+          default:
+            $scope.bday = 'December ' + bdayStr[2] + ', ' + bdayStr[0];
+        }
       }
     })
     //update acct info
@@ -68,6 +105,8 @@ app
       })
     };
     //update image
+
+    ///code for image upload
     $scope.form = [];
     $scope.files = [];
     $scope.updPic = function(){

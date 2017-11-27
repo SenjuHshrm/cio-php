@@ -33,7 +33,7 @@ app
             }
           })
           .success(function(data){
-            var msg = data.message;
+            var msg = data.msg;
             if(msg=='success'){
               var url = '/' + data.user + '/' + data.name + '/';
               window.location.href= url;

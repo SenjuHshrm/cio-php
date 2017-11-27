@@ -4,7 +4,7 @@ app
     $('.news').hide();
     $http({
       method:'GET',
-      url:'/server/info/wInProf.php',
+      url:'/server/info/viewProfile.php',
       cache:true
     })
     .success(function(data){

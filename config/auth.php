@@ -1,35 +1,62 @@
 <?php
 
-  function LoginAuth($AcctTbl, $InfoTbl, $user, $id){
+  function LoginAuth($tbl,$id,$user){
     include($_SERVER['DOCUMENT_ROOT'].'/config/connect.php');
-    session_start();
     $res = new stdClass();
-    $dbUser = mysqli_fetch_assoc($conn->query("SELECT username FROM $AcctTbl WHERE id='$id';"));
-    $dbPass = mysqli_fetch_assoc($conn->query("SELECT password FROM $AcctTbl WHERE id='$id';"));
-    if(($dbUser != false) && ($dbPass != false)){
-      $dbInfo = mysqli_fetch_assoc($conn->query("SELECT * FROM $InfoTbl WHERE id='$id';"));
-      $_SESSION['login'] = $dbInfo['Fname']." ".substr($dbInfo['Mname'],0,1).". ".$dbInfo['Lname'];
-      $_SESSION['pic'] = $dbInfo['pic'];
-      $_SESSION['userType'] = $user;
-      $_SESSION['id'] = $dbInfo['id'];
-      $_SESSION['username'] = $dbUser['username'];
-      $res->message = 'success';
-      $res->name = $dbUser['username'];
-      $res->user = $_SESSION['userType'];
-    }
-    else if(($dbUser == false) && ($dbPass != false)){
-      $res = 'Wrong Username.';
-    }
-    else if(($dbUser != false) && ($dbPass == false)){
-      $res = 'Wrong Password';
+    if(mysqli_connect_errno()){
+      $res->msg = 'There was an error connecting to server.';
     }
     else{
-      $res = 'Account not registered.';
+      session_start();
+      $sql = "CALL LoginAuth('$id','$tbl')";
+      if($result = mysqli_query($conn,$sql)){
+        $row = mysqli_num_rows($result);
+        $query = mysqli_fetch_assoc($result);
+        if($row == 1){
+          $res->msg = 'success';
+          $res->name = $query['username'];
+          $res->user = $user;
+          $_SESSION['id'] = $id;
+          $_SESSION['login'] = $query['FName']." ".substr($query['MName'],0,1).". ".$query['LName'];
+          $_SESSION['pic'] = $query['pic'];
+          $_SESSION['userType'] = $user;
+          $_SESSION['username'] = $query['username'];
+        }else{
+          $res->msg = 'fail';
+        }
+      }
     }
-    $conn->close();
     return $res;
   }
-
+  //
+  function GetProfile($tbl,$id){
+    include($_SERVER['DOCUMENT_ROOT'].'/config/connect.php');
+    $res = new stdClass();
+    if(mysqli_connect_errno()){
+      $res->msg = 'There was an error connecting to server.';
+    }
+    else{
+      $sql = "CALL LoginAuth('$id','$tbl')";
+      if($result = mysqli_query($conn,$sql)){
+        $query = mysqli_fetch_assoc($result);
+        $res->fname = $query["FName"];
+        $res->mname = $query["MName"];
+        $res->lname = $query["LName"];
+        $res->gender = $query["gender"];
+        $res->age = $query["age"];
+        $res->bday = $query["bday"];
+        $res->address = $query["address"];
+        $res->contact = $query["contact"];
+        $res->pic = $query["pic"];
+        $res->session = $id;
+      }
+      else{
+        $res->msg = 'fail';
+      }
+    }
+    return $res;
+  }
+  //
   function SignUp($obj,$AcctTbl,$InfoTbl){
     include($_SERVER['DOCUMENT_ROOT'].'/config/connect.php');
     $password = md5($obj->password);
