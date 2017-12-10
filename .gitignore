@@ -1,4 +1,5 @@
 *.sql
+conLocal.php
 
 public/imgs/admin/*.jpg
 public/imgs/admin/*.png
